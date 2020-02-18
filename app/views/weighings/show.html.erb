@@ -1,0 +1,30 @@
+<% content_for :sidebar do %>
+  <li><%= link_to t("list"), weighings_path  %></li>
+  <li><%= link_to t("new"), new_weighing_path %></li>
+  <li class="active"><%= link_to t("show"), weighing_path %></li>
+  <li><%= link_to t("diagram"), diagram_weighings_path %></li>
+  <li><%= link_to t("invite"), new_invitation_path %></li>
+<% end %>
+
+<h1><%= Weighing.model_name.human %> <%= t("show_lc") %></h1>
+
+<p>
+  <b><%= Weighing.human_attribute_name('date') %>:</b>
+  <%= l @weighing.date %>
+</p>
+<p>
+  <b><%= Weighing.human_attribute_name('weight') %>:</b>
+  <%= @weighing.weight %>
+</p>
+<p>
+  <b><%= Weighing.human_attribute_name('abdominal_girth') %>:</b>
+  <%= @weighing.abdominal_girth %>
+</p>
+<p>
+  <b><%= Weighing.human_attribute_name('adipose') %>:</b>
+  <%= @weighing.adipose %>
+</p>
+
+<%= link_to t("back"), weighings_path, :class => "btn btn-primary" %>
+<%= link_to t("edit"), edit_weighing_path(@weighing), :class => "btn btn-warning" %>
+<%= link_to t("delete"), weighing_path(@weighing), :method => "delete", :class => "btn btn-danger", :confirm => t("confirm") %>

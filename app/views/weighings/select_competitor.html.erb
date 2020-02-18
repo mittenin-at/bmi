@@ -1,0 +1,44 @@
+<% content_for :sidebar do %>
+  <li><%= link_to t("list"), weighings_path  %></li>
+  <li><%= link_to t("new"), new_weighing_path %></li>
+  <li><%= link_to t("diagram"), diagram_weighings_path %></li>
+  <li class="active"><%= link_to t("compare"), select_competitor_weighings_path %></li>
+  <li><%= link_to t("invite"), new_invitation_path %></li>
+<% end %>
+
+<% if current_user.public? %>
+  <h3><%= t "compare_with" %></h3>
+  <%= form_tag '/weighings/compare', :method => :post, :class => 'form-horizontal' do %>
+    <div class="form-group">
+      
+      <%= collection_radio_buttons(:competitor, :id, @competitors, :id, :email) do |competitor|
+        competitor.label(class: "radio") { competitor.radio_button(class: "radio") + competitor.text} 
+      end  %>
+      <%#= select('competitor', 'id', options_for_select(@competitors.map {|c| [c.email, c.id]}), {:include_blank => false},
+                                     class: "form-control" ) %>
+    </div>
+
+<hr/>
+    <div class="form-group">
+      <label class="radio">
+        <%= radio_button_tag(:timespan, "full") %> alle Aufzeichnungen
+      </label>
+      <label class="radio">
+        <%= radio_button_tag(:timespan, "year", :checked) %> das letzte Jahr
+      </label>
+      <label class="radio">
+        <%= radio_button_tag(:timespan, "quarter") %> das letzte Quartal
+      </label>
+      <label class="radio">
+        <%= radio_button_tag(:timespan, "month") %> der letzte Monat
+      </label>
+    </div>
+
+    <%= button_tag t("compare"), class: "btn btn-info" %>
+  <% end %>
+<% else %>
+  <div class="alert alert-error">
+    <%= t "private_profile" %>
+  </div>
+  <%= link_to t("edit_my_profile"), edit_user_path(current_user), class: "btn btn-warning" %>
+<% end %>

@@ -1,0 +1,268 @@
+de:
+  all: alle
+  authentication: Anmeldung
+  back: Zurück
+  bmi: "Der Body-Mass-Index (BMI) ... ist eine Maßzahl für die Bewertung des Körpergewichts eines Menschen in Relation zu seiner Körpergröße. Sie wurde 1870 von Adolphe Quetelet entwickelt.<br/> Der BMI bezieht das Körpergewicht ... auf die Körperoberfläche, die näherungsweise aus dem Quadrat der Körpergröße berechnet wird. Der BMI ist lediglich ein grober Richtwert, da er weder Statur und Geschlecht noch die individuelle Zusammensetzung der Körpermasse aus Fett- und Muskelgewebe eines Menschen berücksichtigt."
+  beta: "Momentan sind wir in einer offenen &beta;-Phase.<br/> Wenn Sie Ihre Emailadresse hinterlassen, werden wir Sie benachrichtigen, sobald wir weitere Benutzer aufnehmen."
+  cancel: Abbrechen
+  compare: Vergleichen
+  compare_with: Vergleichen mit
+  confirm: Sind Sie sicher?
+  created_at: Erzeugt
+  delete: Löschen
+  diagram: Diagramm
+  edit: Bearbeiten
+  edit_lc: bearbeiten
+  edit_my_profile: Mein Profil bearbeiten
+  email: E-Mail Adresse
+  entries: Einträge
+  error: Fehler
+  height: Größe (kg)
+  helpers:
+    adipose: 'Verwenden Sie einen Dezimalpunkt als Trennzeichen! z.B.: 32.1'
+    admin: verleiht Administratorberechtigung - GEFÄHRLICH!
+    date: 'Das Datum der Wägung. Pro Tag kann nur eine Wägung eingegeben werden.'
+    email: "z.B.: clara@mustermann.de"
+    girth: 'Bauchumfang in ganzen Zentimetern.'
+    error_message: ' verhinderte(n), dass diese(r/s) %{model} gespeichert wurde'
+    height: "z.B.: 178"
+    password: "z.B.: Geh59M$314"
+    public: "Kreuzen Sie dieses Feld an, wenn Sie Ihren Gewichtsverlauf veröffentlichen und mit anderen vergleichen möchten."
+    weight: "Verwenden Sie einen Dezimalpunkt als Trennzeichen! z.B.: 78.3"
+  invite: Freunde einladen
+  invite_friends: Laden Sie Ihre Familie und Ihre Freunde ein! Es macht gemeinsam einfach mehr Spaß und gibt den extra-Kick Motivation!
+  invite_now: Einladung senden
+  invitee: Die Emailadresse des Einzuladenden
+  invitation: Einladungen
+  invitations: Einladungen
+  list: Liste
+  login: Anmelden
+  logout: Logout
+  my_entries: Meine Einträge
+  my_profile: Mein Profil
+  new: Neuer Eintrag
+  private_profile: "Sie können Ihren BMI nur mit anderen Personen vergleichen, wenn Sie Ihren eigenen in Ihrem Profil freigeben!"
+  profile: Profil
+  public: öffentlich
+  register: Registrieren
+  save: Speichern
+  show: Anzeigen
+  show_lc: anzeigen
+  source: "Quelle: Wikipedia: 'Body-Mass-Index'"
+  submit: Absenden
+  track: "Sie wollen Ihr Gewicht halten oder sogar abnehmen?<br/>Beobachten Sie Ihren Body Mass Index und seien Sie konsequenter, indem Sie Ihren Status veröffentlichen und mit dem von Freunden und Bekannten vergleichen!"
+  user_list: Benutzerliste
+  welcome: Willkommen beim BMI-Monitor!
+  your_email: Ihre Email-Adresse
+
+  activemodel:
+    errors:
+      template:
+        header:
+          one:    "Konnte {{model}} nicht speichern: ein Fehler."
+          other:  "Konnte {{model}} nicht speichern: {{count}} Fehler."
+        body: "Bitte überprüfen Sie die folgenden Felder:"
+
+  activerecord:
+    errors:
+      template:
+        header:
+          one:    "Konnte {{model}} nicht speichern: ein Fehler."
+          other:  "Konnte {{model}} nicht speichern: {{count}} Fehler."
+        body: "Bitte überprüfen Sie die folgenden Felder:"
+      models:
+        user:
+          attributes:
+            hashed_password:
+              blank: "Das Passwort ist leer!"
+            password_confirmation:
+              confirmation: "Die Passwortwiederholung ist leer!"
+            password:
+              confirmation: 'Die eingegebenen Passwörter stimmen nicht überein!'
+            height:
+              blank: 'Die Größe ist zur Errechnung des BMI nötig und daher ein Mussfeld!'
+            invitation_id:
+              blank: ist nicht korrekt. Haben Sie den Link abgeschnitten?
+              taken: diese Einladung existiert bereits.
+        weighing:
+          attributes:
+            date:
+              taken: 'Für diesen Tag existiert bereits eine Wägung!'
+            weight:
+              blank: 'Bitte geben Sie ein Gewicht ein!'
+        invitation:
+          attributes:
+            recipient_email:
+              blank: "Die Emailadresse wurde nicht angegeben!"
+
+    models:
+      user:
+        one: Benutzer
+        other: Benutzer
+      weighing:
+        one: 'Wägung'
+        other: 'Wägungen'
+      invitation:
+        one: 'Einladung'
+        other: 'Einladungen'
+
+    attributes:
+      invitation:
+        recipient_email: 'Emailadresse des Eingeladenen'
+        invitation_token: 'Token zur Anmeldung'
+      user:
+        email: 'Emailadresse'
+        password: 'Passwort'
+        password_confirmation: 'Passwortwiederholung'
+        public: 'öffentlich'
+        height: 'Größe (cm)'
+        admin: 'Administrator'
+        target: 'Wunschgewicht (kg)'
+
+      weighing:
+        abdominal_girth: 'Bauchumfang (cm)'
+        adipose: 'Körperfett (%)'
+        date: 'Datum'
+        user: 'Benutzer'
+        weight: 'Gewicht (kg)'
+
+      messages:
+        inclusion: "ist kein gültiger Wert"
+        exclusion: "ist nicht verfügbar"
+        invalid: "ist nicht gültig"
+        confirmation: "stimmt nicht mit der Bestätigung überein"
+        accepted: "muss akzeptiert werden"
+        empty: "muss ausgefüllt werden"
+        blank: "muss ausgefüllt werden"
+        too_long: "ist zu lang (nicht mehr als {{count}} Zeichen)"
+        too_short: "ist zu kurz (nicht weniger als {{count}} Zeichen)"
+        wrong_length: "hat die falsche Länge (muss genau {{count}} Zeichen haben)"
+        taken: "ist bereits vergeben"
+        not_a_number: "ist keine Zahl"
+        greater_than: "muss größer als {{count}} sein"
+        greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+        equal_to: "muss genau {{count}} sein"
+        less_than: "muss kleiner als {{count}} sein"
+        less_than_or_equal_to: "muss kleiner oder gleich {{count}} sein"
+        odd: "muss ungerade sein"
+        even: "muss gerade sein"
+        record_invalid: "Gültigkeitsprüfung ist fehlgeschlagen: {{errors}}"
+
+  views:
+    pagination:
+      first: " &laquo; zum Anfang "
+      last: " zum Ende &raquo; "
+      previous: " &lsaquo; zurück "
+      next: " vor &rsaquo; "
+      truncate: "..."
+
+  time:
+    formats:
+      default: "%d.%m.%Y %H:%M"
+      short: "%d.%m.%Y %H:%M"
+      long: "%d.%m.%Y %H:%M Uhr"
+      long_all: "%e. %B %Y %H:%M:%S Uhr"
+      time: "%H:%M:%S"
+    am: "vormittags"
+    pm: "nachmittags"
+
+  date:
+    formats:
+      default: "%d.%m.%Y"
+      short: "%e. %b"
+      long: "%e. %B %Y"
+      only_day: "%e"
+      time: "%H:%M"
+    day_names: [Sonntag, Montag, Dienstag, Mittwoch, Donnerstag, Freitag, Samstag]
+    abbr_day_names: [So, Mo, Di, Mi, Do, Fr, Sa]
+    month_names: [~, Jänner, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
+    abbr_month_names: [~, Jän, Feb, Mär, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez]
+    order:
+      - :day
+      - :month
+      - :year
+
+  datetime:
+    distance_in_words:
+      half_a_minute: 'eine halbe Minute'
+      less_than_x_seconds:
+        one: 'weniger als eine Sekunde'
+        other: 'weniger als {{count}} Sekunden'
+      x_seconds:
+        one: 'eine Sekunde'
+        other: '{{count}} Sekunden'
+      less_than_x_minutes:
+        one: 'weniger als eine Minute'
+        other: 'weniger als {{count}} Minuten'
+      x_minutes:
+        one: 'eine Minute'
+        other: '{{count}} Minuten'
+      about_x_hours:
+        one: 'etwa eine Stunde'
+        other: 'etwa {{count}} Stunden'
+      x_days:
+        one: 'ein Tag'
+        other: '{{count}} Tage'
+      about_x_months:
+        one: 'etwa ein Monat'
+        other: 'etwa {{count}} Monate'
+      x_months:
+        one: 'ein Monat'
+        other: '{{count}} Monate'
+      almost_x_years:
+        one: 'fast ein Jahr'
+        other: 'fast {{count}} Jahre'
+      about_x_years:
+        one: 'etwa ein Jahr'
+        other: 'etwa {{count}} Jahre'
+      over_x_years:
+        one: 'mehr als ein Jahr'
+        other: 'mehr als {{count}} Jahre'
+    prompts:
+      second: "Sekunden"
+      minute: "Minuten"
+      hour: "Stunden"
+      day: "Tag"
+      month: "Monat"
+      year: "Jahr"
+
+  number:
+    format:
+      precision: 2
+      separator: ','
+      delimiter: '.'
+    currency:
+      format:
+        unit: '&euro;'
+        format: '%n %u'
+        separator: ","
+        delimiter: "."
+        precision: 2
+    percentage:
+      format:
+        delimiter: ""
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " und "
+      last_word_connector: " und "
+    select:
+      prompt: "Bitte wählen:"

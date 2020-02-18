@@ -1,0 +1,27 @@
+<table class="table table-striped" >
+  <tr>
+    <td><b><%= t("activerecord.attributes.user.email", :default => t("activerecord.labels.email")) %>:</b></td>
+    <td><%= @user.email %></td>
+  </tr>
+  <tr>
+    <td><b><%= t("activerecord.attributes.user.height", :default => t("activerecord.labels.height")) %>:</b></td>
+    <td><%= @user.height %></td>
+  </tr>
+  <tr>
+    <td><b><%= t("activerecord.attributes.user.target", :default => t("activerecord.labels.target")) %>:</b></td>
+    <td><%= @user.target %></td>
+  </tr>
+  <tr>
+    <td><b><%= t("activerecord.attributes.user.public", :default => t("activerecord.labels.public")) %>:</b></td>
+    <td><%= @user.public? ? raw("&#10003;") : "X" %></td>
+  </tr>
+  <% if admin? %>        
+    <tr>
+      <td><b><%= t("activerecord.attributes.user.admin", :default => t("activerecord.labels.admin")) %>:</b></td>
+      <td><%= @user.admin? ? raw("&#10003;") : "X" %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t("edit"), edit_user_path(@user), :class => "btn btn-primary" %>
+<%= link_to t("delete"), user_path(@user), :method => "delete", :class => "btn btn-danger", :confirm => "#{t("confirm")}" if admin? %>

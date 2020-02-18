@@ -1,0 +1,5 @@
+<%= bootstrap_error(@weighing, Weighing ) %>
+
+<%= form_for :weighing, :url => weighings_path, :html => { :class => :form } do |f| %>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end %>
