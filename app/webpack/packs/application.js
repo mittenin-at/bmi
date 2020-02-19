@@ -13,6 +13,7 @@ global.jQuery = $
 
 require("datatables.net/js/jquery.dataTables")
 require("datatables.net-bs/js/dataTables.bootstrap")
+require("bootstrap-datepicker/dist/js/bootstrap-datepicker")
 
 import './nvd3/d3.v2'
 import './nvd3/fisheye'
@@ -21,4 +22,3 @@ import './nvd3/nv.d3'
 require("bootstrap-sass/assets/javascripts/bootstrap")
 
 import '../stylesheets/application'
-
