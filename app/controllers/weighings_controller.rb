@@ -2,7 +2,7 @@ class WeighingsController < ApplicationController
   before_action :set_weighing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @weighings = Weighing.page(params[:page]).per(15).order("date desc").where(user_id: session[:user_id])
+    @weighings = Weighing.order("date desc").where(user_id: session[:user_id])
   end
 
   def show
