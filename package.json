@@ -9,7 +9,7 @@
     "acorn": "^6.4.1",
     "bootstrap-datepicker": "^1.9.0",
     "bootstrap-sass": "^3.4.1",
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.10.22",
     "datatables.net-bs": "^1.10.20",
     "jquery": "^3.4.1",
     "minimist": "^1.2.5",
